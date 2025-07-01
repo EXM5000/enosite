@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ember & Oak | Premium Wooden-Wick Candles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/canela-font-id.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            background-image: hex("#000000");
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        
+        .hero {
+            /* background here */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), hex("#000000");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+        
+        .title-font {
+            font-family: 'Canela', serif;
+            font-weight: 400;
+        }
+        
+        .candle-card:hover .candle-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .candle-overlay {
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .candle-flicker {
+            animation: flicker 3s infinite alternate;
+        }
+        
+        @keyframes flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+                opacity: 1;
+            }
+            20%, 24%, 55% {
+                opacity: 0.6;
+            }
+        }
+    </style>
+</head>
+<body class="bg-stone-50">
+
+    <!-- Navigation -->
+    <nav class="bg-white bg-opacity-90 fixed w-full z-10 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="enoHome.html" class="flex-shrink-0 flex items-center">
+                        <span class="title-font text-xl font-semibold text-gray-800">Ember & Oak</span>
+                    </a>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="enoHome.html" class="text-gray-800 hover:text-stone-600 px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="enoHome.html#products" class="text-gray-800 hover:text-stone-600 px-3 py-2 text-sm font-medium" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">Products</a>
+                    <a href="enoHome.html#testimonials" class="text-gray-800 hover:text-stone-600 px-3 py-2 text-sm font-medium" onclick="document.getElementById('testimonials').scrollIntoView({behavior: 'smooth'})">Testimonials</a>
+                    <a href="enoHome.html#contact" class="text-gray-800 hover:text-stone-600 px-3 py-2 text-sm font-medium" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact</a>
+                    <a href="enoHome.html#products" class="ml-4 bg-stone-800 hover:bg-stone-700 text-white px-4 py-2 rounded-full text-sm font-medium transition duration-300">View Collection</a>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-800 hover:text-amber-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+        <!-- Mobile Nav -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="enoHome.html" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-amber-600">Home</a>
+                <a href="enoHome.html#products" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-amber-600" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">Products</a>
+                <a href="enoHome.html#testimonials" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-amber-600" onclick="document.getElementById('testimonials').scrollIntoView({behavior: 'smooth'})">Testimonials</a>
+                <a href="enoHome.html#contact" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-amber-600" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact</a>
+                <a href="enoHome.html#products" class="ml-3 mt-2 bg-stone-700 hover:bg-stone-800 text-white px-4 py-2 rounded-full text-sm font-medium transition duration-300">Shop Now</a>
+            </div>
+        </div>
+
+         <!-- Product Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center gap-12 bg-white bg-opacity-70 backdrop-blur-sm rounded-xl p-8">
+            <div class="md:w-1/2">
+                <h2 class="title-font text-4xl md:text-5xl text-gray-800 mb-6">Midnight Lavender</h2>
+                <p class="text-gray-600 mb-8 text-lg">
+                    Our signature Midnight Lavender candle combines soothing French lavender with hints of vanilla and amber, creating a calming atmosphere perfect for evening relaxation. The wooden wick provides a gentle crackling sound reminiscent of a cozy fireplace.
+                </p>
+            </div>
+            <div class="md:w-1/2">
+                <!-- Placeholder for product image -->
+                <div class="bg-gray-200 rounded-lg h-96 w-full flex items-center justify-center" style="background-image: url('img/IMG\ 4417\ from\ PDFSimpli.png'); background-size: cover; background-position: center; background-position-y: 90%;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 bg-stone-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-3xl md:text-4xl font-bold text-gray-800 mb-4">Details</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Here's what brings this candle to the next level.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm text-center">
+                    <div class="w-20 h-20 bg-stone-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-fire text-stone-700 text-3xl"></i>
+                    </div>
+                    <h3 class="title-font text-xl font-semibold text-gray-800 mb-3">Wick</h3>
+                    <p class="text-gray-600">Experience the ambiant crackle and wide flame of our premium wooden wicks.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm text-center">
+                    <div class="w-20 h-20 bg-stone-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-maximize text-stone-700 text-3xl"></i>
+                    </div>
+                    <h3 class="title-font text-xl font-semibold text-gray-800 mb-3">Size</h3>
+                    <p class="text-gray-600">Accent your space with a perfect 7oz candle, without overrunning it.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm text-center">
+                    <div class="w-20 h-20 bg-stone-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-leaf text-stone-700 text-3xl"></i>
+                    </div>
+                    <h3 class="title-font text-xl font-semibold text-gray-800 mb-3">Wax</h3>
+                    <p class="text-gray-600">burn only 100% soy wax - no paraffins or other toxins to harm your family.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    

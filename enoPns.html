@@ -90,7 +90,7 @@
                     <a href="enoHome.html#products" class="ml-4 bg-stone-800 hover:bg-stone-700 text-white px-4 py-2 rounded-full text-sm font-medium transition duration-300">View Collection</a>
                 </div>
                 <div class="-mr-2 flex items-center md:hidden">
-                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-800 hover:text-amber-600 focus:outline-none">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-800 hover:text-stone-700 focus:outline-none">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
@@ -99,13 +99,15 @@
     </nav>
 
         <!-- Mobile Nav -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="enoHome.html" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-amber-600">Home</a>
-                <a href="enoHome.html#products" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-amber-600" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">Products</a>
-                <a href="enoHome.html#testimonials" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-amber-600" onclick="document.getElementById('testimonials').scrollIntoView({behavior: 'smooth'})">Testimonials</a>
-                <a href="enoHome.html#contact" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-amber-600" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact</a>
-                <a href="enoHome.html#products" class="ml-3 mt-2 bg-stone-700 hover:bg-stone-800 text-white px-4 py-2 rounded-full text-sm font-medium transition duration-300">Shop Now</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg w-full">
+            <div class="px-4 py-4 space-y-4">
+                <a href="enoHome.html" class="block px-4 py-3 text-lg font-medium text-gray-800 hover:bg-stone-50 rounded-lg transition duration-200">Home</a>
+                <a href="enoHome.html#products" class="block px-4 py-3 text-lg font-medium text-gray-800 hover:bg-stone-50 rounded-lg transition duration-200" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">Products</a>
+                <a href="enoHome.html#testimonials" class="block px-4 py-3 text-lg font-medium text-gray-800 hover:bg-stone-50 rounded-lg transition duration-200" onclick="document.getElementById('testimonials').scrollIntoView({behavior: 'smooth'})">Testimonials</a>
+                <a href="enoHome.html#contact" class="block px-4 py-3 text-lg font-medium text-gray-800 hover:bg-stone-50 rounded-lg transition duration-200" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact</a>
+                <div class="pt-2">
+                    <a href="enoHome.html#products" class="inline-block w-full text-center bg-stone-800 hover:bg-stone-700 text-white px-6 py-3 rounded-full text-base font-medium transition duration-300">Shop Now</a>
+                </div>
             </div>
         </div>
 
@@ -176,7 +178,7 @@
                 <h3 class="title-font text-lg font-semibold mb-4">Candles</h3>
                 <ul class="space-y-2">
                     <li><a href="enoHome.html#products" class="text-gray-400 hover:text-white transition duration-300">Our Collection</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Candle Care</a></li>
+                    <li><a href="side pages/enoCare.html" class="text-gray-400 hover:text-white transition duration-300">Candle Care</a></li>
                 </ul>
             </div>
             
@@ -193,7 +195,7 @@
                     </li>
                     <li class="flex items-start">
                         <i class="fab fa-instagram text-gray-400 mt-1 mr-3"></i>
-                        <a href="https://www.instagram.com/e.o.candle.co/" class="text-gray-400 hover:text-white transition duration-300" target="_blank">Instagram</a>
+                        <a href="https://www.instagram.com/e.o.candle.co" class="text-gray-400 hover:text-white transition duration-300" target="_blank" rel="noopener">Instagram</a>
                     </li>
                 </ul>
             </div>
@@ -204,4 +206,80 @@
         </div>
     </div>
 </footer>
-    
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-stone-800 text-white rounded-full shadow-lg flex items-center justify-center transition duration-300 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Add fade-in animation to elements when they come into view
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        fadeElements.forEach(element => {
+            fadeInObserver.observe(element);
+        });
+    </script>
+</body>
+</html>
+
+        

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ember & Oak | Premium Wooden-Wick Candles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/canela-font-id.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            background-image: hex("#000000");
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        
+        .hero {
+            /* background here */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), hex("#000000");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+        
+        .title-font {
+            font-family: 'Canela', serif;
+            font-weight: 400;
+        }
+        
+        .candle-card:hover .candle-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .candle-overlay {
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .candle-flicker {
+            animation: flicker 3s infinite alternate;
+        }
+
+        .footer-container {
+            width: 100%;
+            background-color: #111827; /* bg-gray-900 equivalent */
+            border-radius: 20px 20px 0 0;
+            box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1), 0 -2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        .footer-content {
+            max-width: 80rem; /* max-w-7xl equivalent */
+            margin: 0 auto;
+            padding: 0 1rem; /* px-4 equivalent */
+            transition: all 0.3s ease;
+        }
+        
+        @keyframes flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+                opacity: 1;
+            }
+            20%, 24%, 55% {
+                opacity: 0.6;
+            }
+        }
+    </style>
+</head>
+<body class="bg-stone-50">
+
+    <!-- Navigation -->
+    <nav class="bg-white bg-opacity-90 fixed w-full z-10 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="enoHome.html" class="flex-shrink-0 flex items-center">
+                        <span class="title-font text-xl font-semibold text-gray-800">Ember & Oak</span>
+                    </a>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="enoHome.html" class="text-gray-800 hover:text-stone-600 px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="enoHome.html#products" class="text-gray-800 hover:text-stone-600 px-3 py-2 text-sm font-medium" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">Products</a>
+                    <a href="enoHome.html#testimonials" class="text-gray-800 hover:text-stone-600 px-3 py-2 text-sm font-medium" onclick="document.getElementById('testimonials').scrollIntoView({behavior: 'smooth'})">Testimonials</a>
+                    <a href="enoHome.html#contact" class="text-gray-800 hover:text-stone-600 px-3 py-2 text-sm font-medium" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact</a>
+                    <a href="enoHome.html#products" class="ml-4 bg-stone-800 hover:bg-stone-700 text-white px-4 py-2 rounded-full text-sm font-medium transition duration-300">View Collection</a>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-800 hover:text-stone-700 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+        <!-- Mobile Nav -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg w-full">
+            <div class="px-4 py-4 space-y-4">
+                <a href="enoHome.html" class="block px-4 py-3 text-lg font-medium text-gray-800 hover:bg-stone-50 rounded-lg transition duration-200">Home</a>
+                <a href="enoHome.html#products" class="block px-4 py-3 text-lg font-medium text-gray-800 hover:bg-stone-50 rounded-lg transition duration-200" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">Products</a>
+                <a href="enoHome.html#testimonials" class="block px-4 py-3 text-lg font-medium text-gray-800 hover:bg-stone-50 rounded-lg transition duration-200" onclick="document.getElementById('testimonials').scrollIntoView({behavior: 'smooth'})">Testimonials</a>
+                <a href="enoHome.html#contact" class="block px-4 py-3 text-lg font-medium text-gray-800 hover:bg-stone-50 rounded-lg transition duration-200" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact</a>
+                <div class="pt-2">
+                    <a href="enoHome.html#products" class="inline-block w-full text-center bg-stone-800 hover:bg-stone-700 text-white px-6 py-3 rounded-full text-base font-medium transition duration-300">Shop Now</a>
+                </div>
+            </div>
+        </div>
+
+    <!-- Candle Care Section -->
+    <section class="min-h-screen py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+        <div class="fixed inset-0 -z-10">
+            <div class="absolute inset-0 bg-black opacity-30"></div>
+            <div class="w-full h-full bg-cover bg-center bg-fixed" style="background-image: url('https://images.unsplash.com/photo-1517365884913-3c33884b06fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+        </div>
+        
+        <div class="bg-white bg-opacity-75 backdrop-blur-sm rounded-xl p-8 md:p-12 max-w-4xl mx-auto">
+            <h1 class="title-font text-4xl md:text-5xl text-gray-800 mb-8 text-center">CANDLE CARE & SAFETY INSTRUCTIONS</h1>
+            <p class="text-gray-700 text-lg mb-8 text-center">To get the best experience from your wooden wick candle, follow these simple guidelines:</p>
+            
+            <div class="space-y-6">
+                <div>
+                    <h2 class="title-font text-2xl md:text-3xl text-gray-800 mb-3">Before You Burn:</h2>
+                    <ul class="text-gray-700 text-lg space-y-2 list-disc pl-5">
+                        <li>Trim the wooden wick to 1/8" – 3/16" before each use. A short wick ensures a safe and even burn.</li>
+                        <li>Remove all wick trimmings and debris from the wax surface.</li>
+                        <li>Always place your candle on a stable, heat-resistant surface away from drafts, pets, and anything flammable.</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h2 class="title-font text-2xl md:text-3xl text-gray-800 mb-3">While Burning:</h2>
+                    <ul class="text-gray-700 text-lg space-y-2 list-disc pl-5">
+                        <li>Allow the wax to melt fully across the top during the first burn to avoid tunneling. This may take 2–3 hours.</li>
+                        <li>Never burn for more than 4 hours at a time.</li>
+                        <li>Always keep the flame within view. Never leave a burning candle unattended.</li>
+                        <li>If the flame gets too high or flickers excessively, extinguish the candle, let it cool, trim the wick, and relight.</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h2 class="title-font text-2xl md:text-3xl text-gray-800 mb-3">After Use:</h2>
+                    <ul class="text-gray-700 text-lg space-y-2 list-disc pl-5">
+                        <li>Allow the wax to cool completely before handling or moving.</li>
+                        <li>Stop use when ½" of wax remains at the bottom of the jar.</li>
+                        <li>Store candles in a cool, dry place away from direct sunlight.</li>
+                    </ul>
+                </div>
+                
+                <div class="pt-4">
+                    <p class="text-gray-700 text-lg font-medium">Stay Safe & Enjoy! Thank you for supporting our handmade candles. 💛</p>
+                </div>
+            </div>
+        </div>
+    </section>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-3xl md:text-4xl font-bold text-gray-800 mb-4"></h2>
+            </div>
+            
+    
+<!-- Footer -->
+<footer class="footer-container text-white py-12">
+    <div class="footer-content">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="mb-8 md:mb-0">
+                <a href="#" class="flex items-center mb-6">
+                    <span class="title-font text-xl font-semibold">Ember & Oak</span>
+                </a>
+                <p class="text-gray-400">Handcrafted wooden-wick candles to warm your home.</p>
+            </div>
+            
+            <div>
+                <h3 class="title-font text-lg font-semibold mb-4">Candles</h3>
+                <ul class="space-y-2">
+                    <li><a href="enoHome.html#products" class="text-gray-400 hover:text-white transition duration-300">Our Collection</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Candle Care</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="title-font text-lg font-semibold mb-4">Contact Us</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <i class="fas fa-envelope text-gray-400 mt-1 mr-3"></i>
+                        <span class="text-gray-400">eandoak@gmail.com</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-phone-alt text-gray-400 mt-1 mr-3"></i>
+                        <span class="text-gray-400">+1 (236) 994-4856</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fab fa-instagram text-gray-400 mt-1 mr-3"></i>
+                        <a href="https://www.instagram.com/e.o.candle.co" class="text-gray-400 hover:text-white transition duration-300" target="_blank" rel="noopener">Instagram</a>
+                    </li>
+                </ul>
+            </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 Ember & Oak Candles. All rights reserved.</p>
+            </div>
+        </div>
+</footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-stone-800 text-white rounded-full shadow-lg flex items-center justify-center transition duration-300 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Add fade-in animation to elements when they come into view
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        fadeElements.forEach(element => {
+            fadeInObserver.observe(element);
+        });
+    </script>
+</body>
+</html>
+
+    

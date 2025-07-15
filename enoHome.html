@@ -16,12 +16,19 @@
         }
         
         .hero {
-            /* background here */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('img/HEIC\ to\ PNG\ Image\ 4083.png');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('img/enoBeachOne.png');
             background-size: cover;
-            background-position: center;
+            background-position: center top;
             background-repeat: no-repeat;
             min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align content to the top */
+            padding-top: 10%; /* Push content down to 70% from the top */
+        }
+
+        .hero-content {
+            text-align: center;
         }
 
         @media (max-width: 768px) {
@@ -105,23 +112,23 @@
                     <a href="#products" class="ml-4 bg-stone-800 hover:bg-stone-700 text-white px-4 py-2 rounded-full text-sm font-medium transition duration-300">View Collection</a>
                 </div>
                 <div class="-mr-2 flex items-center md:hidden">
-                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-800 hover:text-amber-600 focus:outline-none">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-800 hover:text-stone-700 focus:outline-none">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
             </div>
         </div>
         
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-amber-600">Home</a>
-                <a href="#products" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-amber-600" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">Products</a>
-                <a href="#testimonials" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-amber-600" onclick="document.getElementById('testimonials').scrollIntoView({behavior: 'smooth'})">Testimonials</a>
-                <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-800 hover:text-amber-600" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact</a>
-                <button class="ml-3 mt-2 bg-stone-700 hover:bg-stone-800 text-white px-4 py-2 rounded-full text-sm font-medium transition duration-300">
-                    Shop Now
-                </button>
+        <!-- Mobile Nav -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg w-full">
+            <div class="px-4 py-4 space-y-4">
+                <a href="enoHome.html" class="block px-4 py-3 text-lg font-medium text-gray-800 hover:bg-stone-50 rounded-lg transition duration-200">Home</a>
+                <a href="enoHome.html#products" class="block px-4 py-3 text-lg font-medium text-gray-800 hover:bg-stone-50 rounded-lg transition duration-200" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">Products</a>
+                <a href="enoHome.html#testimonials" class="block px-4 py-3 text-lg font-medium text-gray-800 hover:bg-stone-50 rounded-lg transition duration-200" onclick="document.getElementById('testimonials').scrollIntoView({behavior: 'smooth'})">Testimonials</a>
+                <a href="enoHome.html#contact" class="block px-4 py-3 text-lg font-medium text-gray-800 hover:bg-stone-50 rounded-lg transition duration-200" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact</a>
+                <div class="pt-2">
+                    <a href="enoHome.html#products" class="inline-block w-full text-center bg-stone-800 hover:bg-stone-700 text-white px-6 py-3 rounded-full text-base font-medium transition duration-300">Shop Now</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -129,8 +136,8 @@
     <!-- Hero Section -->
     <section id="home" class="hero h-screen flex items-center justify-center pt-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="title-font text-4xl md:text-6xl font-bold text-white mb-6 fade-in">The Warmth of Wooden Wicks</h1>
-            <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto fade-in">Hand-poured in Tsawwassen, BC using 100% soy wax and wooden wicks for the perfect crackle</p>
+                <h1 class="title-font text-4xl md:text-6xl font-bold text-white mb-6 fade-in">The Warmth of Wooden Wicks</h1>
+                <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto fade-in">Hand-poured in Tsawwassen, BC using 100% soy wax and wooden wicks for the perfect crackle</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in">
                 <a href="#products" class="bg-stone-800 hover:bg-stone-700 text-white px-8 py-3 rounded-full text-lg font-medium transition duration-300 transform hover:scale-105">
                     Our Collection
@@ -190,7 +197,7 @@
                 <div class="candle-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 transform hover:-translate-y-2 relative">
                     <a href="enoSndl.html" class="card-link"></a>
                     <div class="relative h-80">
-                        <img src="img/IMG_4448.png" alt="Smoked Sandalwood Candle" class="w-full h-full object-cover">
+                        <img src="img/Sndl1.png" alt="Smoked Sandalwood Candle" class="w-full h-full object-cover" src="img/Lav1.png" alt="Midnight Lavender Candle" class="w-full h-full object-cover" style="object-position: center 60%;">
                     </div>
                     <div class="p-6">
                         <h3 class="title-font text-xl font-semibold text-gray-800 mb-2">Smoked Sandalwood</h3>
@@ -220,7 +227,7 @@
                 <div class="candle-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 transform hover:-translate-y-2 relative">
                     <a href="enoPns.html" class="card-link"></a>
                     <div class="relative h-80">
-                        <img src="img/IMG_4459.png" alt="Pineapple & Sage Candle" class="w-full h-full object-cover">
+                        <img src="img/IMG_4459.png" alt="Pineapple & Sage Candle" class="w-full h-full object-cover" style="object-position: center 75%;">
                     </div>
                     <div class="p-6">
                         <h3 class="title-font text-xl font-semibold text-gray-800 mb-2">Pineapple & Sage</h3>
@@ -235,7 +242,7 @@
                 <div class="candle-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300 transform hover:-translate-y-2 relative">
                     <a href="enoLav.html" class="card-link"></a>
                     <div class="relative h-80">
-                        <img src="img/IMG 4417 from PDFSimpli.png" alt="Midnight Lavender Candle" class="w-full h-full object-cover">
+                        <img src="img/Lav1.png" alt="Midnight Lavender Candle" class="w-full h-full object-cover" style="object-position: center 80%;">
                     </div>
                     <div class="p-6">
                         <h3 class="title-font text-xl font-semibold text-gray-800 mb-2">Midnight Lavender</h3>
@@ -310,14 +317,14 @@
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p class="text-gray-700 italic mb-6">"The Vanilla & Sandalwood candle is absolutely divine. It fills my entire apartment with the most comforting scent. I've already ordered two more!"</p>
+                    <p class="text-gray-700 italic mb-6">"The Vanilla & Sandalwood fusion candle is absolutely divine. It fills my entire apartment with the most comforting scent. I've already ordered two more!"</p>
                     <div class="flex items-center">
                         <div class="w-12 h-12 rounded-full bg-gray-300 overflow-hidden mr-4">
                             <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Emily R." class="w-full h-full object-cover">
                         </div>
                         <div>
                             <h4 class="font-medium text-gray-800">Emily R.</h4>
-                            <p class="text-sm text-gray-600">Verified Customer</p>
+                            <p class="text-sm text-gray-600">Customer</p>
                         </div>
                     </div>
                 </div>
@@ -332,14 +339,14 @@
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p class="text-gray-700 italic mb-6">"I'm so impressed with the quality of these candles. They burn evenly and the scent lasts for hours. The Lavender & Chamomile helps me unwind after long days."</p>
+                    <p class="text-gray-700 italic mb-6">"I'm so impressed with the quality of these candles. They burn evenly and the scent lasts for hours. The Lavender scent helps me unwind after long days."</p>
                     <div class="flex items-center">
                         <div class="w-12 h-12 rounded-full bg-gray-300 overflow-hidden mr-4">
                             <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." class="w-full h-full object-cover">
                         </div>
                         <div>
                             <h4 class="font-medium text-gray-800">Michael T.</h4>
-                            <p class="text-sm text-gray-600">Verified Customer</p>
+                            <p class="text-sm text-gray-600">Customer</p>
                         </div>
                     </div>
                 </div>
@@ -354,14 +361,14 @@
                             <i class="fas fa-star"></i>
                         </div>
                     </div>
-                    <p class="text-gray-700 italic mb-6">"The packaging alone is worth it - so elegant! But the candles themselves are even better. I bought the Citrus & Sage for my home office and it keeps me focused."</p>
+                    <p class="text-gray-700 italic mb-6">"Customer service is amazing, But the candles themselves are even better. I bought the Pineapple & Sage for my home office and it keeps me focused."</p>
                     <div class="flex items-center">
                         <div class="w-12 h-12 rounded-full bg-gray-300 overflow-hidden mr-4">
                             <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah K." class="w-full h-full object-cover">
                         </div>
                         <div>
                             <h4 class="font-medium text-gray-800">Sarah K.</h4>
-                            <p class="text-sm text-gray-600">Verified Customer</p>
+                            <p class="text-sm text-gray-600">Customer</p>
                         </div>
                     </div>
                 </div>
@@ -397,7 +404,7 @@
                 <h3 class="title-font text-lg font-semibold mb-4">Candles</h3>
                 <ul class="space-y-2">
                     <li><a href="enoHome.html#products" class="text-gray-400 hover:text-white transition duration-300">Our Collection</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Candle Care</a></li>
+                    <li><a href="side pages/enoCare.html" class="text-gray-400 hover:text-white transition duration-300">Candle Care</a></li>
                 </ul>
             </div>
             
@@ -414,7 +421,7 @@
                     </li>
                     <li class="flex items-start">
                         <i class="fab fa-instagram text-gray-400 mt-1 mr-3"></i>
-                        <a href="#https://www.instagram.com/e.o.candle.co/" class="text-gray-400 hover:text-white transition duration-300">Instagram</a>
+                        <a href="https://www.instagram.com/e.o.candle.co" class="text-gray-400 hover:text-white transition duration-300" target="_blank" rel="noopener">Instagram</a>
                     </li>
                 </ul>
             </div>

@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://use.typekit.net/canela-font-id.css">
     <style>
+        :root {
+            --mobile-hero-overlay: rgba(0, 0, 0, 0.19);
+        }
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
         
         body {
@@ -45,7 +48,7 @@
                 align-items: center;
             }
             .hero-content-mobile-bg {
-                background-color: rgba(0, 0, 0, 0.5);
+                background-color: var(--mobile-hero-overlay, rgba(0, 0, 0, 0.3));
                 padding: 1.5rem;
                 border-radius: 0.75rem;
             }

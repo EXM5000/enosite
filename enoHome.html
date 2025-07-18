@@ -16,24 +16,38 @@
         }
         
         .hero {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('img/enoBeachOne.png');
-            background-size: cover;
-            background-position: center top;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('img/Vectorized.png');
+            background-size: 200%; /* Desktop zoom — adjust % here */
+            background-position: 30% 48%; /* Desktop image position — adjust horizontal and vertical % here */
             background-repeat: no-repeat;
             min-height: 100vh;
             display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Align content to the top */
+            justify-content: flex-start;
+            align-items: center;
             padding-top: 10%; /* Push content down to 70% from the top */
         }
 
         .hero-content {
-            text-align: center;
+            text-align: left;
+            align-items: flex-start;
         }
 
         @media (max-width: 768px) {
             .hero {
                 background-attachment: scroll;
+                text-align: center;
+                justify-content: center;
+                background-position: 51% 45%; /* Mobile image position — adjust horizontal and vertical % here */
+                background-size: 550%; /* Mobile zoom — adjust % here */
+            }
+            .hero-content {
+                text-align: center;
+                align-items: center;
+            }
+            .hero-content-mobile-bg {
+                background-color: rgba(0, 0, 0, 0.5);
+                padding: 1.5rem;
+                border-radius: 0.75rem;
             }
         }
         
@@ -134,11 +148,11 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero h-screen flex items-center justify-center pt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section id="home" class="hero h-screen flex items-center justify-center md:justify-start pt-16">
+        <div class="w-full md:w-1/2 px-4 sm:px-6 lg:px-8 text-center md:text-left flex flex-col items-center md:items-start justify-center h-full hero-content-mobile-bg">
                 <h1 class="title-font text-4xl md:text-6xl font-bold text-white mb-6 fade-in">The Warmth of Wooden Wicks</h1>
                 <p class="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto fade-in">Hand-poured in Tsawwassen, BC using 100% soy wax and wooden wicks for the perfect crackle</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in">
+            <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4 fade-in">
                 <a href="#products" class="bg-stone-800 hover:bg-stone-700 text-white px-8 py-3 rounded-full text-lg font-medium transition duration-300 transform hover:scale-105">
                     Our Collection
                 </a>
